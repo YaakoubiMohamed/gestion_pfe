@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="iq-card">
+                    <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                        <h4 class="card-title">Table Soutenance</h4>
+                        </div>
+                    </div>
+                    <div class="iq-card-body">
+                    <div id="table" class="table-editable">
+                        <span class="table-add float-right mb-3 mr-2">
+                        <a class="btn btn-sm iq-bg-success" href="/add-soutenance"><i
+                            class="ri-add-fill"><span class="pl-1">Ajouter Soutenance</span></i>
+                        </a>
+                        </span>
+                        <table class="table table-bordered table-responsive-md table-striped text-center">
+                        <thead>
+                            <tr>
+                            <th>ID</th>
+                            <th>Date</th>
+                            <th>Salle</th>
+                            <th>Président</th>
+                            <th>rapporteur</th>
+                            <th>Examinateur</th>
+                            <th>Projet</th>
+                            <th>Actions</th>
+                    
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let soutenance of soutenances">
+                                <td contenteditable="true">{{soutenance.id}}</td>
+                                <td contenteditable="true">{{soutenance.date}}</td>
+                                <td contenteditable="true">{{soutenance.salle}}</td>
+                                <td contenteditable="true">
+                                    <label for="" *ngFor="let enseignant of enseignants">
+                                        <span *ngIf="enseignant.id == soutenance.president_id">{{enseignant.nom}} {{enseignant.prenom}}</span>
+                                    </label>
+                                </td>
+                                <td contenteditable="true">
+                                    <label for="" *ngFor="let enseignant of enseignants">
+                                        <span *ngIf="enseignant.id == soutenance.rapporteur_id">{{enseignant.nom}} {{enseignant.prenom}}</span>
+                                    </label>
+                                </td>
+                                <td contenteditable="true">
+                                    <label for="" *ngFor="let enseignant of enseignants">
+                                        <span *ngIf="enseignant.id == soutenance.examinateur_id">{{enseignant.nom}} {{enseignant.prenom}}</span>
+                                    </label>
+                                </td>
+                                <td contenteditable="true">
+                                    <label for="" *ngFor="let projet of projets">
+                                        <span *ngIf="projet.id == soutenance.projet_id">{{projet.nom}}</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <span class="table-remove"><button type="button" (click)="delete(soutenance)"
+                                        class="btn iq-bg-danger btn-rounded btn-sm my-0">Supprimer</button></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="iq-card">
+                    <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                        <h4 class="card-title">table demandes</h4>
+                        </div>
+                    </div>
+                    <div class="iq-card-body">
+                    <div id="table" class="table-editable">
+                        <span class="table-add float-right mb-3 mr-2">                    
+                        </span>
+                        <table class="table table-bordered table-responsive-md table-striped text-center">
+                        <thead>
+                            <tr>
+                            <th>id</th>
+                            <th>etudiant</th>
+                            <th>encadreur</th>
+                            <th>date</th>
+                            <th>sujet</th>
+                            <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let demande of demandes">
+                                <td contenteditable="true">{{demande.id}}</td>
+                                <td contenteditable="true">{{demande.etudiant_id}}</td>
+                                <td contenteditable="true">{{demande.encadreur_id}}</td>
+                                <td contenteditable="true">{{demande.date | date:'shortDate'}}</td>
+                                <td contenteditable="true">{{demande.sujet}}</td>
+                                <td>
+                                    <span class="table-remove"><button type="button" (click)="delete(demande)"
+                                        class="btn iq-bg-danger btn-rounded btn-sm my-0">Supprimer</button></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,57 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-lg-6">
+            <div class="iq-card">
+            <div class="iq-card-header d-flex justify-content-between">
+                <div class="iq-header-title">
+                    <h4 class="card-title">Etudiant</h4>
+                </div>
+            </div>
+            <div class="iq-card-body">
+                
+                <form class="form-horizontal" [formGroup]="addForm">
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2 align-self-center mb-0" for="email">Nom:</label>
+                        <div class="col-sm-10">
+                        <input type="text" formControlName="nom" class="form-control" id="email" placeholder="" autocomplete="false">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2 align-self-center mb-0" for="email">Prenom:</label>
+                        <div class="col-sm-10">
+                        <input type="text" formControlName="prenom" class="form-control" id="email" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2 align-self-center mb-0" for="email">Email:</label>
+                        <div class="col-sm-10">
+                        <input type="email" formControlName="email" class="form-control" id="email" placeholder="" autocomplete="false">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2 align-self-center mb-0" for="pwd1">Password:</label>
+                        <div class="col-sm-10">
+                        <input type="password" formControlName="password" class="form-control" id="pwd1" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2 align-self-center mb-0" for="email">Telephone:</label>
+                        <div class="col-sm-10">
+                        <input type="text" formControlName="telephone" class="form-control" id="email" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" (click)="add()" class="btn btn-primary">Ajouter</button>
+                        <button type="submit" class="btn iq-bg-danger" (click)="annuler()">Annuler</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

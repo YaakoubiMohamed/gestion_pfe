@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="iq-card">
+                    <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                        <h4 class="card-title">Table Etudiant</h4>
+                        </div>
+                    </div>
+                    <div class="iq-card-body">
+                    <div id="table" class="table-editable">
+                        <span class="table-add float-right mb-3 mr-2">
+                        <button class="btn btn-sm iq-bg-success" (click)="add()"><i
+                            class="ri-add-fill"><span class="pl-1">Ajouter Etudiant</span></i>
+                        </button>
+                        </span>
+                        <table class="table table-bordered table-responsive-md table-striped text-center">
+                        <thead>
+                            <tr>
+                            <th>id</th>
+                            <th>nom</th>
+                            <th>prenom</th>
+                            <th>email</th>
+                            <th>telephone</th>
+                            <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let etudiant of etudiants">
+                                <td contenteditable="true">{{etudiant.id}}</td>
+                                <td contenteditable="true">{{etudiant.nom}}</td>
+                                <td contenteditable="true">{{etudiant.prenom}}</td>
+                                <td contenteditable="true">{{etudiant.email}}</td>
+                                <td contenteditable="true">{{etudiant.telephone}}</td>
+                                <td>
+                                    <span class="table-remove"><button type="button" (click)="delete(etudiant)"
+                                        class="btn iq-bg-danger btn-rounded btn-sm my-0">Supprimer</button></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
